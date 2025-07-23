@@ -210,7 +210,10 @@
             <div class="quote-content">
                 <h2>Contact Us — Freight, Jobs, Questions</h2>
                 <p>Tell us about your freight, your experience, or just ask a question. We’ll get back to you soon!</p>
-                <form class="quote-form" id="quoteForm">
+                <form class="quote-form" id="quoteForm" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -236,11 +239,7 @@
                         <textarea id="details" name="details" rows="4" placeholder="Tell us about your request, experience, or ask a question" required></textarea>
                     </div>
                     
-                    <!-- Honeypot field for spam protection (hidden) -->
-                    <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
-                        <label for="honeypot">Leave this field empty:</label>
-                        <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
-                    </div>
+                    <div data-netlify-recaptcha="true"></div>
                     
                     <button type="submit" class="cta-button form-submit">Send</button>
                 </form>

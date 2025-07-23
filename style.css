@@ -1177,3 +1177,7 @@ blockquote {
         height: auto;
     }
 } 
+
+.hidden {
+    display: none !important;
+} 
